@@ -10,3 +10,8 @@ para jugar una nueva partida
     Scenario: Veo tablero vacio
         Given inicio la aplicacion
         Then ver tablero
+
+    Scenario: Click a la celda 0
+        Given inicio la aplicacion
+		When Usuario presiona la celda 0
+        Then celda 0 contiene " O "
