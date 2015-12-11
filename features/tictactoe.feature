@@ -42,3 +42,19 @@ para jugar una nueva partida
         Given inicio la aplicacion
         When Usuario presiona todas las celdas
 		Then ver "El juego ha terminado"
+	
+	Scenario: El juego ha terminado y no puedo seguir
+        Given inicio la aplicacion
+        When Usuario presiona todas las celdas
+		And Usuario presiona la celda 0
+		Then ver "El juego ha terminado"
+		And celda 0 contiene "o"
+	
+	Scenario: Gano con las celdas 0,1,2
+		Given inicio la aplicacion
+		When Usuario presiona la celda 0
+		And Usuario presiona la celda 6
+		And Usuario presiona la celda 1
+		And Usuario presiona la celda 8
+		And Usuario presiona la celda 2
+		Then ver "El jugador 1 es el ganador"
