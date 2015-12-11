@@ -30,8 +30,9 @@ class Tablero
 	end
 
 	def e_cell(celda)
-		if ! game_over? then
-			@pos[celda.to_i] = get_player_token
+		index = celda.to_i
+		if ! game_over? and @pos[index] == "click" then
+			@pos[index] = get_player_token
 			@turno = (@turno + 1) % 2
 		end
 	end
