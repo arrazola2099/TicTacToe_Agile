@@ -25,5 +25,13 @@ class Tablero
 	def turno
 		@turno + 1
 	end
+	
+	def game_over?
+		! @pos.include? "click"
+	end
+	
+	def display_game_over
+		game_over? ? "El juego ha terminado" : ""
+	end
 
 end	

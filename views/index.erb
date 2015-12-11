@@ -3,6 +3,7 @@
     <body>
         <h1>Bienvenido a Gato</h1>
         <br />
+		<h2><%= @@tb.display_game_over %></h2>
 		<p>Es turno del jugador <%= @@tb.turno %></p>
         <%= @@tb.display()%>
         <a href="/" id="restart-game">Reiniciar</a>

@@ -31,4 +31,10 @@ When(/^Usuario presiona restart$/) do
     click_link 'restart-game'
 end
 
+When(/^Usuario presiona todas las celdas$/) do
+	for i in 0..8 do
+		submit_form("cell#{i}")
+	end
+end
+
 

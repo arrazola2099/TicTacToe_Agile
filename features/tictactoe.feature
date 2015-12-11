@@ -37,3 +37,8 @@ para jugar una nueva partida
 		Then celda 1 contiene "o"
 		And celda 6 contiene "x"
 		And celda 8 contiene "click"
+	
+	Scenario: El juego ha terminado
+        Given inicio la aplicacion
+        When Usuario presiona todas las celdas
+		Then ver "El juego ha terminado"
