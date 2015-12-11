@@ -11,6 +11,10 @@ para jugar una nueva partida
         Given inicio la aplicacion
         Then ver tablero
 
+	Scenario: Veo que al inicio es turno del jugador 1
+		Given inicio la aplicacion
+		Then ver "Es turno del jugador 1"
+
     Scenario: Click a la celda 0
         Given inicio la aplicacion
 		When Usuario presiona la celda 0
@@ -25,3 +29,11 @@ para jugar una nueva partida
         When Usuario presiona la celda 1
         And Usuario presiona restart
         Then celda 1 contiene "click"
+
+	Scenario: juego de 2 jugadores
+		Given inicio la aplicacion
+		When Usuario presiona la celda 1
+		And Usuario presiona la celda 6
+		Then celda 1 contiene "o"
+		And celda 6 contiene "x"
+		And celda 8 contiene "click"

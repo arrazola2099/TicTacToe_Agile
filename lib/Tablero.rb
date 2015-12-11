@@ -2,6 +2,7 @@ class Tablero
 
 	def initialize
 		@pos = ["click","click","click","click","click","click","click","click","click"]
+		@turno = 0
 	end
 
 	def display
@@ -17,7 +18,12 @@ class Tablero
 	end
 
 	def e_cell(celda)
-		@pos[celda.to_i] = "o"
+		@pos[celda.to_i] = @turno == 0 ? "o" : "x"
+		@turno = (@turno + 1) % 2
+	end
+
+	def turno
+		@turno + 1
 	end
 
 end	
