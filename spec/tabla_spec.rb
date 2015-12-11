@@ -13,5 +13,10 @@ describe "Tablero" do
 	    str = @tb.display()
 	    expect(str).to include("id=\"cell7\"")
 	end
+	
+	it "should have a button that says click" do
+	    str = @tb.display()
+	    expect(str).to include ("click")
+	end
 
 end

@@ -23,5 +23,5 @@ para jugar una nueva partida
     Scenario: Reseteo el tablero
         Given inicio la aplicacion
         When Usuario presiona la celda 1
-            And Usuario presiona restart
+        And Usuario presiona restart
         Then celda 1 contiene "click"

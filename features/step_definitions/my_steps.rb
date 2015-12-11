@@ -23,7 +23,8 @@ When(/^Usuario presiona la celda (\d+)$/) do |celda|
 end
 
 Then(/^celda (\d+) contiene "(.*?)"$/) do |celda, valor|
-	last_response.body.should =~"<form id=\"cell#{celda}\"><input type=\"submit\" value=\"#{valor}\"></form>"
+    str = "<form id=\"cell#{celda}\"><input type=\"submit\" value=\"#{valor}\"></form>"
+	last_response.body.should =~ /#{str}/
 end
 
 When(/^Usuario presiona restart$/) do
