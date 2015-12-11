@@ -10,7 +10,7 @@ Then(/^ver tablero$/) do
     tablero = "<table border=\"solid black\">"
     for i in 0..8 do
         tablero += (i % 3 == 0 ? "<tr>" : "")
-        tablero += "<td ><form id=\"cell#{i}\"><input type=\"submit\" value=\"click\"></form></td>"
+        tablero += "<td ><form id=\"cell#{i}\" action=\"/elegir/#{i}\"><input type=\"submit\" value=\"click\"></form></td>"
         tablero += ((i+1) % 3 == 0 ? "</tr>" : "")
     end
     tablero += "</table>"
@@ -23,7 +23,7 @@ When(/^Usuario presiona la celda (\d+)$/) do |celda|
 end
 
 Then(/^celda (\d+) contiene "(.*?)"$/) do |celda, valor|
-    str = "<form id=\"cell#{celda}\"><input type=\"submit\" value=\"#{valor}\"></form>"
+    str = "<form id=\"cell#{celda}\" action=\"/elegir/#{celda}\"><input type=\"submit\" value=\"#{valor}\"></form>"
 	last_response.body.should =~ /#{str}/
 end
 

@@ -14,7 +14,7 @@ para jugar una nueva partida
     Scenario: Click a la celda 0
         Given inicio la aplicacion
 		When Usuario presiona la celda 0
-        Then celda 0 contiene " O "
+        Then celda 0 contiene "o"
         
     Scenario: Veo el boton de reset
         Given inicio la aplicacion

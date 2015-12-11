@@ -16,10 +16,8 @@ class Tablero
 
 	end
 
-#id=\"cell#{i}\"
-
-#	def e_cell(celda)
-		
-
+	def e_cell(celda)
+		@pos[celda.to_i] = "o"
+	end
 
 end	

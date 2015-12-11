@@ -20,7 +20,8 @@ describe "Tablero" do
 	end
 
 	it "should change cell 1 if you click cell 1" do
-	    str = @tb.e_cell(1)
+	    @tb.e_cell(1)
+        str = @tb.display()
 	    expect(str).to include("value=\"o\"")
 	end
 
