@@ -5,7 +5,7 @@
         <br />
 		<h2><%= @@tb.display_game_over %></h2>
 		<h2><%= @@tb.have_winner %></h2>
-		<p>Es turno del jugador <%= @@tb.turno %></p>
+		<p>Es turno del jugador <%= @@tb.get_player_token %></p>
         <%= @@tb.display()%>
         <a href="/" id="restart-game">Reiniciar</a>
     </body>

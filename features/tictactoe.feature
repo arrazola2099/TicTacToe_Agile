@@ -11,9 +11,9 @@ para jugar una nueva partida
         Given inicio la aplicacion
         Then ver tablero
 
-	Scenario: Veo que al inicio es turno del jugador 1
+	Scenario: Veo que al inicio es turno del jugador con token o
 		Given inicio la aplicacion
-		Then ver "Es turno del jugador 1"
+		Then ver "Es turno del jugador o"
 
     Scenario: Click a la celda 0
         Given inicio la aplicacion
@@ -57,4 +57,4 @@ para jugar una nueva partida
 		And Usuario presiona la celda 1
 		And Usuario presiona la celda 8
 		And Usuario presiona la celda 2
-		Then ver "El jugador 1 es el ganador"
+		Then ver "El jugador o es el ganador"

@@ -31,13 +31,13 @@ class Tablero
 
 	def e_cell(celda)
 		if ! game_over? then
-			@pos[celda.to_i] = @turno == 0 ? "o" : "x"
+			@pos[celda.to_i] = get_player_token
 			@turno = (@turno + 1) % 2
 		end
 	end
 
-	def turno
-		@turno + 1
+	def get_player_token
+		@turno == 0 ? "o" : "x"
 	end
 	
 	def game_over?
@@ -45,7 +45,7 @@ class Tablero
 	end
 
 	def have_winner
-		@winner != -1 ? "El jugador #{@winner} es el ganador" : ""
+		@winner != -1 ? "El jugador #{self.get_player_token()} es el ganador" : ""
 	end
 	
 	def display_game_over
@@ -60,6 +60,7 @@ class Tablero
 		WINNING.each do |key, win_opt|
 			if win_opt? win_opt then
 				@winner = @pos[win_opt[0]] == 'o' ? 1 : 2
+				@turno = (@turno + 1) % 2
 				break
 			end 
 		end
