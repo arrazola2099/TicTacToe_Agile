@@ -19,4 +19,9 @@ describe "Tablero" do
 	    expect(str).to include ("click")
 	end
 
+	it "should change cell 1 if you click cell 1" do
+	    str = @tb.e_cell(1)
+	    expect(str).to include("value=\"o\"")
+	end
+
 end
