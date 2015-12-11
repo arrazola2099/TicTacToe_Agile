@@ -57,12 +57,14 @@ class Tablero
 	end
 	
 	def verify_winner
-		WINNING.each do |key, win_opt|
-			if win_opt? win_opt then
-				@winner = @pos[win_opt[0]] == 'o' ? 1 : 2
-				@turno = (@turno + 1) % 2
-				break
-			end 
+		if ! game_over? then
+			WINNING.each do |key, win_opt|
+				if win_opt? win_opt then
+					@winner = @pos[win_opt[0]] == 'o' ? 1 : 2
+					@turno = (@turno + 1) % 2
+					break
+				end 
+			end
 		end
 	end
 
